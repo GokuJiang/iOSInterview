@@ -16,3 +16,6 @@ https://gsl201600.github.io/2020/05/13/iOSblock%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7
 
 ## NSDictionary 原理
 https://blog.csdn.net/LIN1986LIN/article/details/86005833
+
+## KVC KVO 原理
+https://juejin.cn/post/6844903747680731150
