@@ -1,7 +1,12 @@
 # 数据结构
 
+## 链表
+https://juejin.cn/post/6844903669490515975
+
 ## 二叉树
 https://juejin.cn/post/6844903669326954504
+
+
 1. 求二叉树节点个数
 ```javascript
 var nodeNumsOfBTree = (root) => {

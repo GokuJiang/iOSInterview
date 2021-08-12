@@ -334,3 +334,7 @@ let kSmallestNode = (root, k) => {
     }
     return Number.MIN_SAFE_INTEGER
 }
+/** 二叉树下一个节点。给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回 */
+let nextNodeOfTree = (root) => {
+    
+}
