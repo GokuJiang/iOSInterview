@@ -128,13 +128,14 @@ var k_level_number = (root, k) => {
 var k_level_leaf_number = (root, k) => {
     if (!root || k <= 0) return 0
     if (root && k === 1) {
-        if (!root.left && !root.right) {
+        if (root.left === null && root.right === null) {
             return 1
         } else {
             return 0
         }
     }
-    return k_level_leaf_number(root.left, k-1) + k_level_leaf_number(root.right, k-1)
+    return k_level_leaf_number(root.left, k - 1) +
+        k_level_leaf_number(root.right, k - 1)
 }
 
 /** 判断两颗二叉树是否相等*/
@@ -150,7 +151,8 @@ var isSameBinaryTree = (pRoot, qRoot) => {
 /** 判断平衡二叉树 */
 var isBalanceBinaryTree = (root) => {
     if (!root) return true
-    return Math.abs(maxHeight(root.left) - maxHeight(root.right)) <= 1 && isBalanceBinaryTree(root.left) && isBalanceBinaryTree(root.right)
+    return Math.abs(maxHeight(root.left) - maxHeight(root.right)) <= 1 &&
+        isBalanceBinaryTree(root.left) && isBalanceBinaryTree(root.right)
 }
 
 var maxHeight = (root) => {
@@ -170,8 +172,8 @@ var mirrorBinaryTree = (root) => {
 /** 给定一个二叉树，检查它是否是镜像对称的。 */
 var isSymmetricBinartTree = (root) => {
     var helper = (left, right) => {
-        if (!left && !right) return true
-        if (!left || !right) return false
+        if (left == null && right == null) return true
+        if (left = null || right == null) return false
         if (left.val !== right.val) return false
         return helper(left.left, right.right) && helper(left.right,right.left) 
     }
@@ -336,5 +338,18 @@ let kSmallestNode = (root, k) => {
 }
 /** 二叉树下一个节点。给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回 */
 let nextNodeOfTree = (root) => {
-    
+    if (root === null) return root
+    if (root.right != null) {
+        let p = root.right
+        while (p.left != null) {
+            node = node.left
+        }
+        return node
+    }
+    while (root.left != null) {
+        let p = root.left
+        if (p.left == root) return p
+        root = p
+    }
+    return null
 }
